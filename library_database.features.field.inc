@@ -50,7 +50,7 @@ function library_database_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -79,7 +79,7 @@ function library_database_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -146,7 +146,7 @@ function library_database_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -199,7 +199,7 @@ function library_database_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -233,7 +233,7 @@ function library_database_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_text',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -274,7 +274,7 @@ function library_database_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -341,7 +341,7 @@ function library_database_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '3',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -378,7 +378,7 @@ function library_database_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '5',
+        'weight' => '1',
       ),
     ),
   );
@@ -428,7 +428,7 @@ function library_database_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 5,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -449,7 +449,7 @@ function library_database_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
