@@ -21,6 +21,7 @@ features[features_api][] = api:1
 features[field][] = node-base_library_database-body
 features[field][] = node-base_library_database-field_database_brief_description
 features[field][] = node-base_library_database-field_database_coverage
+features[field][] = node-base_library_database-field_database_coverage_end
 features[field][] = node-base_library_database-field_database_difficulties
 features[field][] = node-base_library_database-field_database_link
 features[field][] = node-base_library_database-field_database_subject

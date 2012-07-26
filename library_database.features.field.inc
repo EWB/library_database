@@ -238,6 +238,75 @@ function library_database_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-base_library_database-field_database_coverage_end'.
+  $fields['node-base_library_database-field_database_coverage_end'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_database_coverage_end',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'base_library_database',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'e.g. present',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_database_coverage_end',
+      'label' => 'Coverage End',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-base_library_database-field_database_difficulties'.
   $fields['node-base_library_database-field_database_difficulties'] = array(
     'field_config' => array(
@@ -295,7 +364,7 @@ function library_database_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -457,11 +526,13 @@ function library_database_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Brief Description');
+  t('Coverage End');
   t('Coverage Start');
   t('Full Description');
   t('Link');
   t('Subjects');
   t('Technical Difficulties');
+  t('e.g. present');
 
   return $fields;
 }
