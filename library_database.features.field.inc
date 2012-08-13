@@ -224,7 +224,7 @@ function library_database_field_default_fields() {
         'module' => 'date',
         'settings' => array(
           'display_all_day' => 0,
-          'increment' => 15,
+          'increment' => 1,
           'input_format' => 'Y M j - g:i:sa',
           'input_format_custom' => '',
           'label_position' => 'above',
