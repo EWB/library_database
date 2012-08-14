@@ -436,7 +436,7 @@ function library_database_field_default_fields() {
         ),
         'enable_tokens' => 1,
         'title' => 'optional',
-        'title_maxlength' => '128',
+        'title_maxlength' => '255',
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
