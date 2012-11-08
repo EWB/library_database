@@ -89,6 +89,9 @@ function library_database_strongarm() {
         'title' => array(
           'weight' => '0',
         ),
+        'metatags' => array(
+          'weight' => '10',
+        ),
       ),
       'display' => array(),
     ),
