@@ -15,6 +15,13 @@ function library_database_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function library_database_views_api() {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function library_database_node_info() {
