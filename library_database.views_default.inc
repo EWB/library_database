@@ -245,6 +245,65 @@ function library_database_views_default_views() {
   $handler->display->display_options['filters']['field_resource_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_resource_type_tid']['vocabulary'] = 'resource_types';
   $handler->display->display_options['path'] = 'databases';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Brief Description */
+  $handler->display->display_options['fields']['field_database_brief_description']['id'] = 'field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['table'] = 'field_data_field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['field'] = 'field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['label'] = 'Description';
+  /* Field: Content: Coverage Start */
+  $handler->display->display_options['fields']['field_database_coverage']['id'] = 'field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['table'] = 'field_data_field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['field'] = 'field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['label'] = 'Coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Coverage End */
+  $handler->display->display_options['fields']['field_database_coverage_end']['id'] = 'field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['table'] = 'field_data_field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['field'] = 'field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['label'] = '';
+  $handler->display->display_options['fields']['field_database_coverage_end']['element_label_colon'] = FALSE;
+  /* Field: Content: Primary */
+  $handler->display->display_options['fields']['field_primary']['id'] = 'field_primary';
+  $handler->display->display_options['fields']['field_primary']['table'] = 'field_data_field_primary';
+  $handler->display->display_options['fields']['field_primary']['field'] = 'field_primary';
+  $handler->display->display_options['fields']['field_primary']['delta_offset'] = '0';
+  /* Field: Content: Subjects */
+  $handler->display->display_options['fields']['field_subjects']['id'] = 'field_subjects';
+  $handler->display->display_options['fields']['field_subjects']['table'] = 'field_data_field_subjects';
+  $handler->display->display_options['fields']['field_subjects']['field'] = 'field_subjects';
+  $handler->display->display_options['fields']['field_subjects']['delta_offset'] = '0';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['field_resource_type']['id'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['field'] = 'field_resource_type';
+  $handler->display->display_options['fields']['field_resource_type']['delta_offset'] = '0';
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['field_database_link']['id'] = 'field_database_link';
+  $handler->display->display_options['fields']['field_database_link']['table'] = 'field_data_field_database_link';
+  $handler->display->display_options['fields']['field_database_link']['field'] = 'field_database_link';
+  $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_database_link']['type'] = 'link_plain';
+  $handler->display->display_options['path'] = 'database-analysis';
   $export['databases_a_z'] = $view;
 
   $view = new view();
@@ -307,6 +366,7 @@ function library_database_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '%1 Resources';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;

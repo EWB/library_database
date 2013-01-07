@@ -53,11 +53,11 @@ function library_database_field_default_fields() {
           'weight' => '5',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -143,7 +143,7 @@ function library_database_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '1',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -240,7 +240,7 @@ function library_database_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '6',
+          'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -340,7 +340,7 @@ function library_database_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '8',
+          'weight' => '5',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -418,7 +418,7 @@ function library_database_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '7',
+          'weight' => '4',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -534,7 +534,7 @@ function library_database_field_default_fields() {
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
-        'validate_url' => 1,
+        'validate_url' => 0,
       ),
       'widget' => array(
         'active' => 0,
@@ -595,13 +595,9 @@ function library_database_field_default_fields() {
         ),
         'full' => array(
           'label' => 'inline',
-          'module' => 'ds',
-          'settings' => array(
-            'taxonomy_term_link' => TRUE,
-            'taxonomy_term_separator' => ', ',
-          ),
-          'type' => 'ds_taxonomy_separator',
-          'weight' => '2',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -688,7 +684,7 @@ function library_database_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '10',
+          'weight' => '7',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -779,7 +775,7 @@ function library_database_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '9',
+          'weight' => '6',
         ),
         'search_result' => array(
           'label' => 'above',
