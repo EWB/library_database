@@ -45,6 +45,15 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '1',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -130,6 +139,12 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
         'default' => array(
           'label' => 'inline',
           'module' => 'text',
@@ -214,6 +229,20 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_repeat_rule' => 'show',
+          ),
+          'type' => 'date_default',
+          'weight' => '2',
+        ),
         'default' => array(
           'label' => 'inline',
           'module' => 'date',
@@ -320,6 +349,12 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => 'e.g. present',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'default' => array(
           'label' => 'inline',
           'module' => 'text',
@@ -398,6 +433,12 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
         'default' => array(
           'label' => 'inline',
           'module' => 'list',
@@ -478,6 +519,13 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => '0',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'link',
@@ -578,6 +626,12 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => 'This is a key or primary resources for the following subject(s)',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
         'default' => array(
           'label' => 'inline',
           'module' => 'taxonomy',
@@ -661,6 +715,16 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'inline',
+          'module' => 'ds',
+          'settings' => array(
+            'taxonomy_term_link' => 0,
+            'taxonomy_term_separator' => ', ',
+          ),
+          'type' => 'ds_taxonomy_separator',
+          'weight' => '3',
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -752,6 +816,12 @@ function library_database_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'database_link' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
