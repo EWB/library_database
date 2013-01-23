@@ -28,6 +28,7 @@ features[field][] = node-base_library_database-field_database_coverage
 features[field][] = node-base_library_database-field_database_coverage_end
 features[field][] = node-base_library_database-field_database_difficulties
 features[field][] = node-base_library_database-field_database_link
+features[field][] = node-base_library_database-field_off_campus_link
 features[field][] = node-base_library_database-field_primary
 features[field][] = node-base_library_database-field_resource_type
 features[field][] = node-base_library_database-field_subjects

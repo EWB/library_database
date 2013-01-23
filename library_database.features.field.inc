@@ -59,14 +59,14 @@ function library_database_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -101,7 +101,7 @@ function library_database_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -150,14 +150,14 @@ function library_database_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -188,7 +188,7 @@ function library_database_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -255,7 +255,7 @@ function library_database_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'inline',
@@ -269,7 +269,7 @@ function library_database_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -309,7 +309,7 @@ function library_database_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_text',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -360,14 +360,14 @@ function library_database_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '8',
+          'weight' => '7',
         ),
         'full' => array(
           'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -397,7 +397,7 @@ function library_database_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -444,14 +444,14 @@ function library_database_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '7',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'inline',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -478,7 +478,7 @@ function library_database_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -586,6 +586,108 @@ function library_database_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-base_library_database-field_off_campus_link'.
+  $fields['node-base_library_database-field_off_campus_link'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_off_campus_link',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'base_library_database',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'database_link' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => '1',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => '1',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_off_campus_link',
+      'label' => 'Off-Campus Link',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => 'off-campus-link',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => 'default',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => '128',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => FALSE,
+        'validate_url' => 0,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '2',
+      ),
+    ),
+  );
+
   // Exported field: 'node-base_library_database-field_primary'.
   $fields['node-base_library_database-field_primary'] = array(
     'field_config' => array(
@@ -643,7 +745,7 @@ function library_database_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -670,7 +772,7 @@ function library_database_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -730,7 +832,7 @@ function library_database_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '10',
+          'weight' => '9',
         ),
         'full' => array(
           'label' => 'inline',
@@ -740,7 +842,7 @@ function library_database_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '7',
+          'weight' => '8',
         ),
         'search_result' => array(
           'label' => 'inline',
@@ -771,7 +873,7 @@ function library_database_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -827,7 +929,7 @@ function library_database_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '9',
+          'weight' => '8',
         ),
         'full' => array(
           'label' => 'inline',
@@ -837,7 +939,7 @@ function library_database_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '6',
+          'weight' => '7',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -864,7 +966,7 @@ function library_database_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -876,6 +978,7 @@ function library_database_field_default_fields() {
   t('Coverage Start');
   t('Full Description');
   t('Link');
+  t('Off-Campus Link');
   t('Primary');
   t('Subjects');
   t('Technical Difficulties');

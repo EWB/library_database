@@ -102,7 +102,10 @@ function library_database_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '11',
+        ),
+        'path' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),
