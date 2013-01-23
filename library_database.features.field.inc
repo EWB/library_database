@@ -534,7 +534,7 @@ function library_database_field_default_fields() {
           'weight' => '0',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
@@ -636,7 +636,7 @@ function library_database_field_default_fields() {
           'weight' => '1',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
