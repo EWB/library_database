@@ -174,60 +174,6 @@ function library_database_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'base_library_database' => 'base_library_database',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'word';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Subjects (field_subjects) */
-  $handler->display->display_options['filters']['field_subjects_tid']['id'] = 'field_subjects_tid';
-  $handler->display->display_options['filters']['field_subjects_tid']['table'] = 'field_data_field_subjects';
-  $handler->display->display_options['filters']['field_subjects_tid']['field'] = 'field_subjects_tid';
-  $handler->display->display_options['filters']['field_subjects_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_subjects_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_subjects_tid']['expose']['operator_id'] = 'field_subjects_tid_op';
-  $handler->display->display_options['filters']['field_subjects_tid']['expose']['label'] = 'Subjects';
-  $handler->display->display_options['filters']['field_subjects_tid']['expose']['operator'] = 'field_subjects_tid_op';
-  $handler->display->display_options['filters']['field_subjects_tid']['expose']['identifier'] = 'field_subjects_tid';
-  $handler->display->display_options['filters']['field_subjects_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_subjects_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_subjects_tid']['vocabulary'] = 'library_subjects';
   /* Filter criterion: Content: Type (field_resource_type) */
   $handler->display->display_options['filters']['field_resource_type_tid']['id'] = 'field_resource_type_tid';
   $handler->display->display_options['filters']['field_resource_type_tid']['table'] = 'field_data_field_resource_type';
@@ -241,10 +187,53 @@ function library_database_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+    4 => 0,
+    5 => 0,
   );
   $handler->display->display_options['filters']['field_resource_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_resource_type_tid']['vocabulary'] = 'resource_types';
-  $handler->display->display_options['path'] = 'databases';
+
+  /* Display: A-Z Listing Page */
+  $handler = $view->new_display('page', 'A-Z Listing Page', 'page');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['field_database_link']['id'] = 'field_database_link';
+  $handler->display->display_options['fields']['field_database_link']['table'] = 'field_data_field_database_link';
+  $handler->display->display_options['fields']['field_database_link']['field'] = 'field_database_link';
+  $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
+  /* Field: Content: Brief Description */
+  $handler->display->display_options['fields']['field_database_brief_description']['id'] = 'field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['table'] = 'field_data_field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['field'] = 'field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['label'] = 'Description';
+  /* Field: Content: Coverage Start */
+  $handler->display->display_options['fields']['field_database_coverage']['id'] = 'field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['table'] = 'field_data_field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['field'] = 'field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['label'] = 'Coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Coverage End */
+  $handler->display->display_options['fields']['field_database_coverage_end']['id'] = 'field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['table'] = 'field_data_field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['field'] = 'field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['label'] = '';
+  $handler->display->display_options['fields']['field_database_coverage_end']['element_label_colon'] = FALSE;
+  $handler->display->display_options['path'] = 'databases/a-z';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'A-Z Listing';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'normal';
+  $handler->display->display_options['tab_options']['title'] = 'A-Z Listing';
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -304,6 +293,56 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_database_link']['type'] = 'link_plain';
   $handler->display->display_options['path'] = 'database-analysis';
+
+  /* Display: Off-Campus Links to Databases Block */
+  $handler = $view->new_display('block', 'Off-Campus Links to Databases Block', 'block_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Off-Campus Link */
+  $handler->display->display_options['fields']['field_off_campus_link']['id'] = 'field_off_campus_link';
+  $handler->display->display_options['fields']['field_off_campus_link']['table'] = 'field_data_field_off_campus_link';
+  $handler->display->display_options['fields']['field_off_campus_link']['field'] = 'field_off_campus_link';
+  $handler->display->display_options['fields']['field_off_campus_link']['click_sort_column'] = 'url';
+  /* Field: Content: Brief Description */
+  $handler->display->display_options['fields']['field_database_brief_description']['id'] = 'field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['table'] = 'field_data_field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['field'] = 'field_database_brief_description';
+  $handler->display->display_options['fields']['field_database_brief_description']['label'] = 'Description';
+  /* Field: Content: Coverage Start */
+  $handler->display->display_options['fields']['field_database_coverage']['id'] = 'field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['table'] = 'field_data_field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['field'] = 'field_database_coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['label'] = 'Coverage';
+  $handler->display->display_options['fields']['field_database_coverage']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Coverage End */
+  $handler->display->display_options['fields']['field_database_coverage_end']['id'] = 'field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['table'] = 'field_data_field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['field'] = 'field_database_coverage_end';
+  $handler->display->display_options['fields']['field_database_coverage_end']['label'] = '';
+  $handler->display->display_options['fields']['field_database_coverage_end']['element_label_colon'] = FALSE;
+
+  /* Display: Off-Campus Tabbed Page */
+  $handler = $view->new_display('page', 'Off-Campus Tabbed Page', 'page_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<br><p><b>Option 1 (recommended):</b> Use the <b><a href="http://infotech.stlawu.edu/node/71">SLU VPN client</a></b> with your SLU network ID and password and get access to all of the library\'s electronic databases, electronic journals and RefWorks.</p><p><b>Option 2:</b> Access to the Library\'s databases and <i>selected</i> journals is available via the links in the table below.  Access is available for all SLU faculty, staff and students.</p>';
+  $handler->display->display_options['header']['area']['format'] = 'richtext_editor';
+  $handler->display->display_options['path'] = 'databases/off-campus';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Off-Campus';
+  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['databases_a_z'] = $view;
 
   $view = new view();
