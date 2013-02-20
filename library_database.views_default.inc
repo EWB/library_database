@@ -196,12 +196,87 @@ function library_database_views_default_views() {
   /* Display: A-Z Listing Page */
   $handler = $view->new_display('page', 'A-Z Listing Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_database_link' => 'field_database_link',
+    'field_trial' => 'field_database_link',
+    'field_database_brief_description' => 'field_database_brief_description',
+    'field_database_coverage' => 'field_database_coverage',
+    'field_database_coverage_end' => 'field_database_coverage',
+    'field_database_difficulties' => 'field_database_brief_description',
+    'field_new' => 'field_database_link',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_database_link' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_trial' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_database_brief_description' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_database_coverage' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '-',
+      'empty_column' => 0,
+    ),
+    'field_database_coverage_end' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_database_difficulties' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_new' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_database_link']['id'] = 'field_database_link';
   $handler->display->display_options['fields']['field_database_link']['table'] = 'field_data_field_database_link';
   $handler->display->display_options['fields']['field_database_link']['field'] = 'field_database_link';
   $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
+  /* Field: Content: Trial */
+  $handler->display->display_options['fields']['field_trial']['id'] = 'field_trial';
+  $handler->display->display_options['fields']['field_trial']['table'] = 'field_data_field_trial';
+  $handler->display->display_options['fields']['field_trial']['field'] = 'field_trial';
+  $handler->display->display_options['fields']['field_trial']['label'] = '';
+  $handler->display->display_options['fields']['field_trial']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_trial']['alter']['text'] = '<img src="./sites/all/themes/slu_libraries_theme/images/trial.png" />';
+  $handler->display->display_options['fields']['field_trial']['element_class'] = 'trial';
+  $handler->display->display_options['fields']['field_trial']['element_label_colon'] = FALSE;
   /* Field: Content: Brief Description */
   $handler->display->display_options['fields']['field_database_brief_description']['id'] = 'field_database_brief_description';
   $handler->display->display_options['fields']['field_database_brief_description']['table'] = 'field_data_field_database_brief_description';
@@ -226,6 +301,23 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_coverage_end']['field'] = 'field_database_coverage_end';
   $handler->display->display_options['fields']['field_database_coverage_end']['label'] = '';
   $handler->display->display_options['fields']['field_database_coverage_end']['element_label_colon'] = FALSE;
+  /* Field: Content: Technical Difficulties */
+  $handler->display->display_options['fields']['field_database_difficulties']['id'] = 'field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['table'] = 'field_data_field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['field'] = 'field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['label'] = '';
+  $handler->display->display_options['fields']['field_database_difficulties']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_database_difficulties']['alter']['text'] = '<img src="./sites/all/themes/slu_libraries_theme/images/technical-difficulties.png" />';
+  $handler->display->display_options['fields']['field_database_difficulties']['element_class'] = 'technical-difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['element_label_colon'] = FALSE;
+  /* Field: Content: New */
+  $handler->display->display_options['fields']['field_new']['id'] = 'field_new';
+  $handler->display->display_options['fields']['field_new']['table'] = 'field_data_field_new';
+  $handler->display->display_options['fields']['field_new']['field'] = 'field_new';
+  $handler->display->display_options['fields']['field_new']['label'] = '';
+  $handler->display->display_options['fields']['field_new']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_new']['alter']['text'] = '<img src="./sites/all/themes/slu_libraries_theme/images/new.png" />';
+  $handler->display->display_options['fields']['field_new']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'databases/a-z';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'A-Z Listing';
@@ -412,7 +504,10 @@ function library_database_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['columns'] = array(
     'field_database_link' => 'field_database_link',
+    'field_new' => 'field_database_link',
+    'field_trial' => 'field_database_link',
     'view_node_1' => 'field_database_link',
+    'field_database_difficulties' => 'field_database_link',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -423,7 +518,28 @@ function library_database_views_default_views() {
       'separator' => '&nbsp;',
       'empty_column' => 0,
     ),
+    'field_new' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_trial' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'view_node_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_database_difficulties' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -441,6 +557,23 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_link']['label'] = '';
   $handler->display->display_options['fields']['field_database_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
+  /* Field: Content: New */
+  $handler->display->display_options['fields']['field_new']['id'] = 'field_new';
+  $handler->display->display_options['fields']['field_new']['table'] = 'field_data_field_new';
+  $handler->display->display_options['fields']['field_new']['field'] = 'field_new';
+  $handler->display->display_options['fields']['field_new']['label'] = '';
+  $handler->display->display_options['fields']['field_new']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_new']['alter']['text'] = '<img src="../sites/all/themes/slu_libraries_theme/images/new.png" />';
+  $handler->display->display_options['fields']['field_new']['element_label_colon'] = FALSE;
+  /* Field: Content: Trial */
+  $handler->display->display_options['fields']['field_trial']['id'] = 'field_trial';
+  $handler->display->display_options['fields']['field_trial']['table'] = 'field_data_field_trial';
+  $handler->display->display_options['fields']['field_trial']['field'] = 'field_trial';
+  $handler->display->display_options['fields']['field_trial']['label'] = '';
+  $handler->display->display_options['fields']['field_trial']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_trial']['alter']['text'] = '<img src="../sites/all/themes/slu_libraries_theme/images/trial.png" />';
+  $handler->display->display_options['fields']['field_trial']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_trial']['element_label_colon'] = FALSE;
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node_1']['id'] = 'view_node_1';
   $handler->display->display_options['fields']['view_node_1']['table'] = 'views_entity_node';
@@ -451,6 +584,14 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['view_node_1']['node_in_colorbox'] = TRUE;
   $handler->display->display_options['fields']['view_node_1']['node_in_colorbox_width'] = '400';
   $handler->display->display_options['fields']['view_node_1']['node_in_colorbox_height'] = '400';
+  /* Field: Content: Technical Difficulties */
+  $handler->display->display_options['fields']['field_database_difficulties']['id'] = 'field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['table'] = 'field_data_field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['field'] = 'field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['label'] = '';
+  $handler->display->display_options['fields']['field_database_difficulties']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_database_difficulties']['alter']['text'] = '<img src="../sites/all/themes/slu_libraries_theme/images/technical-difficulties.png" />';
+  $handler->display->display_options['fields']['field_database_difficulties']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Subjects (field_subjects) */
   $handler->display->display_options['arguments']['field_subjects_tid']['id'] = 'field_subjects_tid';
@@ -499,6 +640,33 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_link']['element_type'] = 'h4';
   $handler->display->display_options['fields']['field_database_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
+  /* Field: Content: Trial */
+  $handler->display->display_options['fields']['field_trial']['id'] = 'field_trial';
+  $handler->display->display_options['fields']['field_trial']['table'] = 'field_data_field_trial';
+  $handler->display->display_options['fields']['field_trial']['field'] = 'field_trial';
+  $handler->display->display_options['fields']['field_trial']['label'] = '';
+  $handler->display->display_options['fields']['field_trial']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_trial']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_trial']['alter']['text'] = '<img src="../sites/all/themes/slu_libraries_theme/images/trial.png" />';
+  $handler->display->display_options['fields']['field_trial']['element_label_colon'] = FALSE;
+  /* Field: Content: Technical Difficulties */
+  $handler->display->display_options['fields']['field_database_difficulties']['id'] = 'field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['table'] = 'field_data_field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['field'] = 'field_database_difficulties';
+  $handler->display->display_options['fields']['field_database_difficulties']['label'] = '';
+  $handler->display->display_options['fields']['field_database_difficulties']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_database_difficulties']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_database_difficulties']['alter']['text'] = '<img src="../sites/all/themes/slu_libraries_theme/images/technical-difficulties.png" />';
+  $handler->display->display_options['fields']['field_database_difficulties']['element_label_colon'] = FALSE;
+  /* Field: Content: New */
+  $handler->display->display_options['fields']['field_new']['id'] = 'field_new';
+  $handler->display->display_options['fields']['field_new']['table'] = 'field_data_field_new';
+  $handler->display->display_options['fields']['field_new']['field'] = 'field_new';
+  $handler->display->display_options['fields']['field_new']['label'] = '';
+  $handler->display->display_options['fields']['field_new']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_new']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_new']['alter']['text'] = '<img src="../sites/all/themes/slu_libraries_theme/images/new.png" />';
+  $handler->display->display_options['fields']['field_new']['element_label_colon'] = FALSE;
   /* Field: Content: Coverage End */
   $handler->display->display_options['fields']['field_database_coverage_end']['id'] = 'field_database_coverage_end';
   $handler->display->display_options['fields']['field_database_coverage_end']['table'] = 'field_data_field_database_coverage_end';
@@ -525,7 +693,7 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_coverage']['field'] = 'field_database_coverage';
   $handler->display->display_options['fields']['field_database_coverage']['label'] = 'Coverage';
   $handler->display->display_options['fields']['field_database_coverage']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_database_coverage']['alter']['text'] = '[field_database_coverage] - [field_database_coverage_end]';
+  $handler->display->display_options['fields']['field_database_coverage']['alter']['text'] = '[field_database_coverage] - [field_database_coverage_end] [field_trial] [field_database_difficulties] [field_new]';
   $handler->display->display_options['fields']['field_database_coverage']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_database_coverage']['settings'] = array(
     'format_type' => 'long',
