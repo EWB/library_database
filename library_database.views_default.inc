@@ -318,6 +318,52 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_new']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_new']['alter']['text'] = '<img src="./sites/all/themes/slu_libraries_theme/images/new.png" />';
   $handler->display->display_options['fields']['field_new']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'base_library_database' => 'base_library_database',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  /* Filter criterion: Content: Type (field_resource_type) */
+  $handler->display->display_options['filters']['field_resource_type_tid']['id'] = 'field_resource_type_tid';
+  $handler->display->display_options['filters']['field_resource_type_tid']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['filters']['field_resource_type_tid']['field'] = 'field_resource_type_tid';
+  $handler->display->display_options['filters']['field_resource_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_resource_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['operator_id'] = 'field_resource_type_tid_op';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['operator'] = 'field_resource_type_tid_op';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['identifier'] = 'field_resource_type_tid';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_resource_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_resource_type_tid']['vocabulary'] = 'resource_types';
   $handler->display->display_options['path'] = 'databases/a-z';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'A-Z Listing';
@@ -419,6 +465,52 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_coverage_end']['field'] = 'field_database_coverage_end';
   $handler->display->display_options['fields']['field_database_coverage_end']['label'] = '';
   $handler->display->display_options['fields']['field_database_coverage_end']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'base_library_database' => 'base_library_database',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  /* Filter criterion: Content: Type (field_resource_type) */
+  $handler->display->display_options['filters']['field_resource_type_tid']['id'] = 'field_resource_type_tid';
+  $handler->display->display_options['filters']['field_resource_type_tid']['table'] = 'field_data_field_resource_type';
+  $handler->display->display_options['filters']['field_resource_type_tid']['field'] = 'field_resource_type_tid';
+  $handler->display->display_options['filters']['field_resource_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_resource_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['operator_id'] = 'field_resource_type_tid_op';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['operator'] = 'field_resource_type_tid_op';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['identifier'] = 'field_resource_type_tid';
+  $handler->display->display_options['filters']['field_resource_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_resource_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_resource_type_tid']['vocabulary'] = 'resource_types';
 
   /* Display: Off-Campus Tabbed Page */
   $handler = $view->new_display('page', 'Off-Campus Tabbed Page', 'page_2');
