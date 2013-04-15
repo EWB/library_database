@@ -197,19 +197,27 @@ function library_database_views_default_views() {
   $handler = $view->new_display('page', 'A-Z Listing Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'footable';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_database_link' => 'field_database_link',
+    'field_off_campus_link' => 'field_off_campus_link',
     'field_trial' => 'field_database_link',
     'field_database_brief_description' => 'field_database_brief_description',
     'field_database_coverage' => 'field_database_coverage',
     'field_database_coverage_end' => 'field_database_coverage',
-    'field_database_difficulties' => 'field_database_brief_description',
+    'field_database_difficulties' => 'field_database_difficulties',
     'field_new' => 'field_database_link',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'field_database_link' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_off_campus_link' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -228,35 +236,72 @@ function library_database_views_default_views() {
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_database_coverage' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '-',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_database_coverage_end' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_database_difficulties' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_new' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
+    ),
+  );
+  $handler->display->display_options['style_options']['footable'] = array(
+    'expand' => 'field_database_link',
+    'hide' => array(
+      'field_database_link' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_off_campus_link' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_trial' => array(
+        'phone' => 'phone',
+        'tablet' => 'tablet',
+      ),
+      'field_database_brief_description' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'field_database_coverage' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'field_database_coverage_end' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'field_database_difficulties' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'field_new' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
     ),
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -268,6 +313,15 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_link']['table'] = 'field_data_field_database_link';
   $handler->display->display_options['fields']['field_database_link']['field'] = 'field_database_link';
   $handler->display->display_options['fields']['field_database_link']['click_sort_column'] = 'url';
+  /* Field: Content: Off-Campus Link */
+  $handler->display->display_options['fields']['field_off_campus_link']['id'] = 'field_off_campus_link';
+  $handler->display->display_options['fields']['field_off_campus_link']['table'] = 'field_data_field_off_campus_link';
+  $handler->display->display_options['fields']['field_off_campus_link']['field'] = 'field_off_campus_link';
+  $handler->display->display_options['fields']['field_off_campus_link']['label'] = '';
+  $handler->display->display_options['fields']['field_off_campus_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_off_campus_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_off_campus_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_off_campus_link']['type'] = 'link_label';
   /* Field: Content: Trial */
   $handler->display->display_options['fields']['field_trial']['id'] = 'field_trial';
   $handler->display->display_options['fields']['field_trial']['table'] = 'field_data_field_trial';
@@ -282,6 +336,8 @@ function library_database_views_default_views() {
   $handler->display->display_options['fields']['field_database_brief_description']['table'] = 'field_data_field_database_brief_description';
   $handler->display->display_options['fields']['field_database_brief_description']['field'] = 'field_database_brief_description';
   $handler->display->display_options['fields']['field_database_brief_description']['label'] = 'Description';
+  $handler->display->display_options['fields']['field_database_brief_description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_database_brief_description']['alter']['text'] = '<span class="db-description">[field_database_brief_description]<span class="off-campus-link"> ([field_off_campus_link])</span></span>';
   /* Field: Content: Coverage Start */
   $handler->display->display_options['fields']['field_database_coverage']['id'] = 'field_database_coverage';
   $handler->display->display_options['fields']['field_database_coverage']['table'] = 'field_data_field_database_coverage';
@@ -514,6 +570,7 @@ function library_database_views_default_views() {
 
   /* Display: Off-Campus Tabbed Page */
   $handler = $view->new_display('page', 'Off-Campus Tabbed Page', 'page_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
